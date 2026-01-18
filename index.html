@@ -79,7 +79,7 @@
             margin-bottom: 30px;
         }
         .stat-card {
-            background: rgba(0, 0, 0, 1);
+            background: rgba(255, 251, 251, 0.829);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
@@ -227,18 +227,7 @@
 
         <div class="file-select-section">
             <h2 style="margin-bottom: 20px;">Load from Results Folder</h2>
-            <select id="resultFileSelect" style="padding: 10px; margin-right: 10px; border-radius: 5px; background: #181828; color: #fff; border: 1px solid #444;">
-                        <style>
-                        /* ...existing code... */
-                        /* Custom dropdown style for dark background */
-                        select#resultFileSelect, select#resultFileSelect option {
-                            background: #181828;
-                            color: #fff;
-                        }
-                        select#resultFileSelect:focus {
-                            outline: 2px solid #00d4ff;
-                        }
-                        </style>
+            <select id="resultFileSelect" style="padding: 10px; margin-right: 10px; border-radius: 5px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid #444;">
                 <option value="">Choose a file...</option>
             </select>
             <button class="upload-btn" onclick="loadSelectedFile()">Load File</button>
