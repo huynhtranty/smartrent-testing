@@ -79,15 +79,18 @@
             margin-bottom: 30px;
         }
         .stat-card {
-            background: rgba(255, 251, 251, 0.829);
-            border-radius: 15px;
-            padding: 25px;
+            background: #23233a;
+            border-radius: 18px;
+            padding: 28px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s;
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            border: 1.5px solid #2d2d4d;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .stat-card:hover {
-            transform: translateY(-5px);
+            box-shadow: 0 4px 24px rgba(0,212,255,0.12);
+            transform: translateY(-5px) scale(1.03);
         }
         .stat-card.success {
             border-left: 4px solid #00ff88;
@@ -105,6 +108,7 @@
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 5px;
+            color: #fff;
         }
         .stat-label {
             color: #888;
@@ -118,10 +122,13 @@
             margin-bottom: 30px;
         }
         .chart-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 15px;
-            padding: 25px;
-            backdrop-filter: blur(10px);
+            background: #23233a;
+            border-radius: 18px;
+            padding: 28px;
+            color: #fff;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            border: 1.5px solid #2d2d4d;
+            backdrop-filter: blur(6px);
         }
         .chart-title {
             font-size: 1.2rem;
@@ -227,7 +234,15 @@
 
         <div class="file-select-section">
             <h2 style="margin-bottom: 20px;">Load from Results Folder</h2>
-            <select id="resultFileSelect" style="padding: 10px; margin-right: 10px; border-radius: 5px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid #444;">
+            <select id="resultFileSelect" style="padding: 12px; margin-right: 10px; border-radius: 8px; background: #23233a; color: #fff; border: 2px solid #00d4ff; font-size: 1.1rem; min-width: 260px;">
+                        /* Custom dropdown style for dark background */
+                        select#resultFileSelect, select#resultFileSelect option {
+                            background: #23233a;
+                            color: #fff;
+                        }
+                        select#resultFileSelect:focus {
+                            outline: 2px solid #00d4ff;
+                        }
                 <option value="">Choose a file...</option>
             </select>
             <button class="upload-btn" onclick="loadSelectedFile()">Load File</button>
