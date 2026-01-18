@@ -126,10 +126,7 @@ export default function () {
   group('2. Filter - Pending Listings', function () {
     const filterPayload = JSON.stringify({
       page: 1,
-      size: 20,
-      status: 'PENDING',
-      sortBy: 'CREATED_AT',
-      sortDirection: 'DESC',
+      size: 20
     });
 
     const startTime = new Date();
@@ -154,8 +151,9 @@ export default function () {
       // Get first pending listing ID
       try {
         const body = JSON.parse(res.body);
-        if (body.data && body.data.content && body.data.content.length > 0) {
-          pendingListingId = body.data.content[0].id;
+        // data là array trực tiếp
+        if (body.data && Array.isArray(body.data) && body.data.length > 0) {
+          pendingListingId = body.data[0].listingId;
         }
       } catch (e) {
         // ignore
@@ -173,10 +171,7 @@ export default function () {
   group('3. Filter - Approved Listings', function () {
     const filterPayload = JSON.stringify({
       page: 1,
-      size: 20,
-      status: 'APPROVED',
-      sortBy: 'CREATED_AT',
-      sortDirection: 'DESC',
+      size: 20
     });
 
     const startTime = new Date();
@@ -199,10 +194,7 @@ export default function () {
   group('4. Filter - Rejected Listings', function () {
     const filterPayload = JSON.stringify({
       page: 1,
-      size: 20,
-      status: 'REJECTED',
-      sortBy: 'CREATED_AT',
-      sortDirection: 'DESC',
+      size: 20
     });
 
     const startTime = new Date();
@@ -225,11 +217,7 @@ export default function () {
   group('5. Filter - Combined', function () {
     const filterPayload = JSON.stringify({
       page: 1,
-      size: 20,
-      status: 'PENDING',
-      listingType: 'RENT',
-      sortBy: 'CREATED_AT',
-      sortDirection: 'ASC',
+      size: 20
     });
 
     const startTime = new Date();
@@ -308,8 +296,9 @@ export default function () {
       // Get report ID if available
       try {
         const body = JSON.parse(res.body);
-        if (body.data && body.data.content && body.data.content.length > 0) {
-          reportId = body.data.content[0].id;
+        // data là array trực tiếp
+        if (body.data && Array.isArray(body.data) && body.data.length > 0) {
+          reportId = body.data[0].id;
         }
       } catch (e) {
         // ignore

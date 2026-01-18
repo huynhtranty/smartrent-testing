@@ -1,0 +1,621 @@
+{
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "min",
+      "med",
+      "max",
+      "p(90)",
+      "p(95)"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": false
+  },
+  "state": {
+    "isStdOutTTY": true,
+    "isStdErrTTY": true,
+    "testRunDurationMs": 191720.0965
+  },
+  "metrics": {
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 0.8291,
+        "max": 349.6288,
+        "p(90)": 20.88529000000001,
+        "p(95)": 26.891254999999962,
+        "avg": 7.187590604575175,
+        "min": 0
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "min": 0,
+        "med": 0,
+        "max": 6.4712,
+        "p(90)": 0.5324700000000001,
+        "p(95)": 0.6086499999999999,
+        "avg": 0.21357295751633976
+      }
+    },
+    "data_sent": {
+      "values": {
+        "count": 304281,
+        "rate": 1587.1106136231263
+      },
+      "type": "counter",
+      "contains": "data"
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0.8562434417628542,
+        "passes": 2448,
+        "fails": 411
+      }
+    },
+    "http_req_failed": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "fails": 819,
+        "rate": 0.33088235294117646,
+        "passes": 405
+      },
+      "thresholds": {
+        "rate<0.05": {
+          "ok": false
+        }
+      }
+    },
+    "save_listing_duration": {
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "avg": 76.55970149253731,
+        "min": 48,
+        "med": 73,
+        "max": 182,
+        "p(90)": 92,
+        "p(95)": 108.35
+      },
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      }
+    },
+    "login_duration": {
+      "contains": "default",
+      "values": {
+        "avg": 675.2408759124088,
+        "min": 464,
+        "med": 618,
+        "max": 1214,
+        "p(90)": 962.6,
+        "p(95)": 1056.6
+      },
+      "thresholds": {
+        "p(95)<2000": {
+          "ok": true
+        }
+      },
+      "type": "trend"
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 333.0879674019608,
+        "min": 40.8224,
+        "med": 85.2886,
+        "max": 2263.1396,
+        "p(90)": 961.44695,
+        "p(95)": 1209.51422
+      },
+      "thresholds": {
+        "p(95)<2000": {
+          "ok": true
+        }
+      }
+    },
+    "push_listing_duration": {
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "min": 51,
+        "med": 74,
+        "max": 228,
+        "p(90)": 97,
+        "p(95)": 109,
+        "avg": 78.3955223880597
+      },
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      }
+    },
+    "get_listings_duration": {
+      "thresholds": {
+        "p(95)<2000": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "avg": 938.3284671532847,
+        "min": 378,
+        "med": 882,
+        "max": 2263,
+        "p(90)": 1400.2,
+        "p(95)": 1596.599999999999
+      }
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "min": 0,
+        "max": 5,
+        "value": 1
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 2218.5669,
+        "p(90)": 937.31489,
+        "p(95)": 1193.8145549999997,
+        "avg": 325.6868038398694,
+        "min": 39.3943,
+        "med": 82.28485
+      }
+    },
+    "successful_operations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 813,
+        "rate": 4.240557014324265
+      }
+    },
+    "group_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 334.9438633169933,
+        "min": 40.8224,
+        "med": 86.20325,
+        "max": 2264.7096,
+        "p(90)": 964.91486,
+        "p(95)": 1212.1286649999997
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "rate": 54196.79099733814,
+        "count": 10390614
+      }
+    },
+    "errors": {
+      "values": {
+        "rate": 0.2238562091503268,
+        "passes": 274,
+        "fails": 950
+      },
+      "thresholds": {
+        "rate<0.05": {
+          "ok": false
+        }
+      },
+      "type": "rate",
+      "contains": "default"
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 5826.232064963502,
+        "min": 4443.6539,
+        "med": 5732.2053,
+        "max": 7888.7861,
+        "p(90)": 6823.01956,
+        "p(95)": 7214.365659999998
+      }
+    },
+    "http_reqs": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 1224,
+        "rate": 6.38430723927786
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "max": 5,
+        "value": 5,
+        "min": 5
+      }
+    },
+    "stats_category_duration": {
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "avg": 67.69343065693431,
+        "min": 40,
+        "med": 61,
+        "max": 263,
+        "p(90)": 83,
+        "p(95)": 112.19999999999982
+      }
+    },
+    "http_req_connecting": {
+      "values": {
+        "med": 0,
+        "max": 128.0513,
+        "p(90)": 0,
+        "p(95)": 0,
+        "avg": 0.2518686274509804,
+        "min": 0
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "create_listing_duration": {
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "avg": 76.07299270072993,
+        "min": 49,
+        "med": 71,
+        "max": 262,
+        "p(90)": 94.80000000000001,
+        "p(95)": 105
+      },
+      "thresholds": {
+        "p(95)<3000": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_blocked": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(95)": 0,
+        "avg": 1.1038580882352942,
+        "min": 0,
+        "med": 0,
+        "max": 540.0558,
+        "p(90)": 0
+      }
+    },
+    "http_req_tls_handshaking": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 350.3743,
+        "p(90)": 0,
+        "p(95)": 0,
+        "avg": 0.6985978758169935,
+        "min": 0,
+        "med": 0
+      }
+    },
+    "my_listings_duration": {
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "avg": 905.7737226277372,
+        "min": 380,
+        "med": 786,
+        "max": 2188,
+        "p(90)": 1609.8000000000002,
+        "p(95)": 1792.5999999999995
+      },
+      "thresholds": {
+        "p(95)<2000": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration{expected_response:true}": {
+      "values": {
+        "min": 40.8224,
+        "med": 392.0984,
+        "max": 2263.1396,
+        "p(90)": 1123.96522,
+        "p(95)": 1347.2978199999998,
+        "avg": 459.7991623931625
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "stats_province_duration": {
+      "contains": "default",
+      "values": {
+        "min": 41,
+        "med": 61,
+        "max": 179,
+        "p(90)": 83.80000000000001,
+        "p(95)": 93,
+        "avg": 65.01459854014598
+      },
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      },
+      "type": "trend"
+    },
+    "listing_detail_duration": {
+      "thresholds": {
+        "p(95)<1000": {
+          "ok": true
+        }
+      },
+      "type": "trend",
+      "contains": "default",
+      "values": {
+        "min": 64,
+        "med": 96,
+        "max": 413,
+        "p(90)": 155.10000000000002,
+        "p(95)": 167.84999999999994,
+        "avg": 109.65671641791045
+      }
+    },
+    "iterations": {
+      "type": "counter",
+      "contains": "default",
+      "values": {
+        "count": 137,
+        "rate": 0.714583408317865
+      }
+    }
+  },
+  "root_group": {
+    "name": "",
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [
+      {
+        "name": "1. Authentication",
+        "path": "::1. Authentication",
+        "id": "84a0888343740a93ea45bd189aa374cc",
+        "groups": [],
+        "checks": [
+            {
+              "name": "login status is 200",
+              "path": "::1. Authentication::login status is 200",
+              "id": "a2a411477d235a89074ed07a51e33e82",
+              "passes": 137,
+              "fails": 0
+            },
+            {
+              "name": "login has access token",
+              "path": "::1. Authentication::login has access token",
+              "id": "a33176b3d1643f8f104c76f52a8abe60",
+              "passes": 137,
+              "fails": 0
+            }
+          ]
+      },
+      {
+        "name": "2. Get Listings (Public)",
+        "path": "::2. Get Listings (Public)",
+        "id": "9a0a0cda7e85c7a4afc06b92ad9c49aa",
+        "groups": [],
+        "checks": [
+            {
+              "name": "get listings status is 200",
+              "path": "::2. Get Listings (Public)::get listings status is 200",
+              "id": "476244b9b4b888b528be2ffd92cc80be",
+              "passes": 137,
+              "fails": 0
+            },
+            {
+              "passes": 137,
+              "fails": 0,
+              "name": "get listings has data",
+              "path": "::2. Get Listings (Public)::get listings has data",
+              "id": "e4a37489b052e0bc2baa8b205c294a9a"
+            },
+            {
+              "passes": 134,
+              "fails": 3,
+              "name": "get listings response time < 2s",
+              "path": "::2. Get Listings (Public)::get listings response time < 2s",
+              "id": "4cc7645137350728d1e79f886566f149"
+            }
+          ]
+      },
+      {
+        "id": "644b3263daaf09e7aa11d01469ed178c",
+        "groups": [],
+        "checks": [
+            {
+              "name": "listing detail status is 200",
+              "path": "::3. Listing Detail::listing detail status is 200",
+              "id": "aefb0ba1efb349d11e687c5f42222e96",
+              "passes": 134,
+              "fails": 0
+            },
+            {
+              "name": "listing detail has data",
+              "path": "::3. Listing Detail::listing detail has data",
+              "id": "46c7598c75747aacedbb81997aa9b5a3",
+              "passes": 134,
+              "fails": 0
+            },
+            {
+              "name": "listing detail response time < 500ms",
+              "path": "::3. Listing Detail::listing detail response time < 500ms",
+              "id": "95bc05b4794c5165639dc6d151aa4c7a",
+              "passes": 134,
+              "fails": 0
+            }
+          ],
+        "name": "3. Listing Detail",
+        "path": "::3. Listing Detail"
+      },
+      {
+        "name": "4. My Listings (Protected)",
+        "path": "::4. My Listings (Protected)",
+        "id": "b9dfbc83794912012acf670125774b0b",
+        "groups": [],
+        "checks": [
+            {
+              "name": "my listings status is 200",
+              "path": "::4. My Listings (Protected)::my listings status is 200",
+              "id": "37d6904a67b529a6b88d1994ab616627",
+              "passes": 137,
+              "fails": 0
+            },
+            {
+              "fails": 0,
+              "name": "my listings has data",
+              "path": "::4. My Listings (Protected)::my listings has data",
+              "id": "235aa27c59ee231d772e2ccbc258f3ec",
+              "passes": 137
+            },
+            {
+              "name": "my listings response time < 2s",
+              "path": "::4. My Listings (Protected)::my listings response time < 2s",
+              "id": "8bb7383252b430b39941712bece1a76b",
+              "passes": 134,
+              "fails": 3
+            }
+          ]
+      },
+      {
+        "name": "5. Stats by Province",
+        "path": "::5. Stats by Province",
+        "id": "43fa6482d711b679fc13b247c434c2e5",
+        "groups": [],
+        "checks": [
+            {
+              "name": "stats province status is 200",
+              "path": "::5. Stats by Province::stats province status is 200",
+              "id": "b9a8dd06e80c14c713cbce48b49bb911",
+              "passes": 137,
+              "fails": 0
+            },
+            {
+              "fails": 0,
+              "name": "stats province has data",
+              "path": "::5. Stats by Province::stats province has data",
+              "id": "95144f4425de2083c8fa917505474e2c",
+              "passes": 137
+            },
+            {
+              "name": "stats province response time < 1s",
+              "path": "::5. Stats by Province::stats province response time < 1s",
+              "id": "bc8ebb2d71819bed6fa610228b324cc6",
+              "passes": 137,
+              "fails": 0
+            }
+          ]
+      },
+      {
+        "groups": [],
+        "checks": [
+            {
+              "passes": 137,
+              "fails": 0,
+              "name": "stats category status is 200",
+              "path": "::6. Stats by Category::stats category status is 200",
+              "id": "811206ed372699454bb7bae7c54e5566"
+            },
+            {
+              "passes": 137,
+              "fails": 0,
+              "name": "stats category has data",
+              "path": "::6. Stats by Category::stats category has data",
+              "id": "ad483decfc7e651e69d43f350ba31604"
+            },
+            {
+              "path": "::6. Stats by Category::stats category response time < 1s",
+              "id": "15ab449397e885e01795d1469bfa14c0",
+              "passes": 137,
+              "fails": 0,
+              "name": "stats category response time < 1s"
+            }
+          ],
+        "name": "6. Stats by Category",
+        "path": "::6. Stats by Category",
+        "id": "053dd8380a19690f8b22c2b66d7b5234"
+      },
+      {
+        "name": "7. Save Listing",
+        "path": "::7. Save Listing",
+        "id": "aa9d3dc20beb22a881bf94d0e5a9e3b2",
+        "groups": [],
+        "checks": [
+            {
+              "name": "save listing status is 200/201/409",
+              "path": "::7. Save Listing::save listing status is 200/201/409",
+              "id": "893b7fb0f722fe7b1225a7d1cfec3c51",
+              "passes": 0,
+              "fails": 134
+            },
+            {
+              "id": "9b0a99b9f1c353627049b0e94dcbbc47",
+              "passes": 134,
+              "fails": 0,
+              "name": "save listing response time < 1s",
+              "path": "::7. Save Listing::save listing response time < 1s"
+            }
+          ]
+      },
+      {
+        "id": "22597d1176b23fa08b66d8bfa801e322",
+        "groups": [],
+        "checks": [
+            {
+              "name": "create listing status is 200/201/400/403",
+              "path": "::8. Create Listing::create listing status is 200/201/400/403",
+              "id": "565813cabd03ce0a2f938f34f50bd271",
+              "passes": 0,
+              "fails": 137
+            }
+          ],
+        "name": "8. Create Listing",
+        "path": "::8. Create Listing"
+      },
+      {
+        "name": "9. Push Listing",
+        "path": "::9. Push Listing",
+        "id": "e11b2148d96f7362be1e1d17b3648e72",
+        "groups": [],
+        "checks": [
+            {
+              "path": "::9. Push Listing::push listing status is 200/201/400/403",
+              "id": "241412dc6901e87d120b0157274b69fd",
+              "passes": 0,
+              "fails": 134,
+              "name": "push listing status is 200/201/400/403"
+            }
+          ]
+      }
+    ],
+    "checks": []
+  }
+}
