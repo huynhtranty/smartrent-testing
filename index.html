@@ -46,6 +46,13 @@
         .upload-section:hover {
             border-color: #00d4ff;
         }
+        .file-select-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
         #fileInput {
             display: none;
         }
@@ -218,6 +225,14 @@
         <h1>K6 Performance Dashboard</h1>
         <p class="subtitle">SmartRent API Performance Testing Results</p>
 
+        <div class="file-select-section">
+            <h2 style="margin-bottom: 20px;">Load from Results Folder</h2>
+            <select id="resultFileSelect" style="padding: 10px; margin-right: 10px; border-radius: 5px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid #444;">
+                <option value="">Choose a file...</option>
+            </select>
+            <button class="upload-btn" onclick="loadSelectedFile()">Load File</button>
+        </div>
+
         <div class="upload-section" id="uploadSection">
             <h2 style="margin-bottom: 20px;">Upload K6 Results JSON</h2>
             <p style="color: #888; margin-bottom: 20px;">
@@ -335,6 +350,37 @@
                 renderDashboard();
             };
             reader.readAsText(file);
+        }
+
+        // Tải danh sách file từ results-index.json khi load trang
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('results/results-index.json')
+                .then(response => response.json())
+                .then(files => {
+                    const select = document.getElementById('resultFileSelect');
+                    files.filter(f => f.endsWith('.json')).forEach(file => {
+                        const option = document.createElement('option');
+                        option.value = 'results/' + file;
+                        option.textContent = file;
+                        select.appendChild(option);
+                    });
+                });
+        });
+
+        function loadSelectedFile() {
+            const select = document.getElementById('resultFileSelect');
+            const filePath = select.value;
+            if (filePath) {
+                fetch(filePath)
+                .then(response => response.json())
+                .then(data => {
+                    currentData = data;
+                    renderDashboard();
+                })
+                .catch(error => {
+                    alert('Error loading file: ' + error);
+                });
+            }
         }
 
         function renderDashboard() {
