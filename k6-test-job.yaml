@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: k6-test-script
+  namespace: monitoring
+data:
+  load-test.js: |
+    import http from 'k6/http';
+    import { check, sleep } from 'k6';
+
+    export const options = {
+      stages: [
+        { duration: '1m', target: 20 },
+        { duration: '3m', target: 20 },
+        { duration: '1m', target: 0 },
+      ],
+      thresholds: {
+        http_req_duration: ['p(95)<1000'],
+        http_req_failed: ['rate<0.05'],
+      },
+    };
+
+    const BASE_URL = 'https://dev.api.smartrent.io.vn';
+
+    export default function () {
+      const healthRes = http.get(`${BASE_URL}/actuator/health`);
+
+      check(healthRes, {
+        'status is 200 or 401': (r) => r.status === 200 || r.status === 401,
+        'response time < 500ms': (r) => r.timings.duration < 500,
+      });
+
+      sleep(1);
+    }
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: k6-load-test
+  namespace: monitoring
+spec:
+  template:
+    metadata:
+      labels:
+        app: k6-test
+    spec:
+      containers:
+      - name: k6
+        image: grafana/k6:latest
+        command:
+        - /bin/sh
+        - -c
+        - |
+          k6 run --summary-export=/tmp/summary.json /scripts/load-test.js
+          echo "Test completed. Results:"
+          cat /tmp/summary.json
+        volumeMounts:
+        - name: k6-scripts
+          mountPath: /scripts
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            memory: 256Mi
+      volumes:
+      - name: k6-scripts
+        configMap:
+          name: k6-test-script
+      restartPolicy: Never
+  backoffLimit: 1
