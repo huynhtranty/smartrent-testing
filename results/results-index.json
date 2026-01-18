@@ -1,9 +1,7 @@
 [
   "admin-journey-results.json",
   "k6-api-test-results.json",
-  "k6-core-api-results copy 2.json",
-  "k6-core-api-results copy.json",
-  "k6-core-api-results.json",
-  "k6-test-results.txt",
+  "full-api-results-max-limit.json",
+  "full-api-results.json",
   "user-journey-results.json"
 ]
